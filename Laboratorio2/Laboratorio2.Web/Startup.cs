@@ -21,7 +21,10 @@ namespace Laboratorio2.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // ES2.1: Injecting appSettings
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
+            //services.AddSession();
 
             var builder = services.AddMvc()
                 .AddSessionStateTempDataProvider();
@@ -61,16 +64,20 @@ namespace Laboratorio2.Web
 
             app.UseRouting();
 
+            //app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
                 // ES1: DECOMMENTARE LE SEGUENTI ISTRUZIONI 1 PER VOLTA PER VERIFICARE
 
-                endpoints.MapControllerRoute("Pianifica", "Pianifica/Tasks");
+                //endpoints.MapControllerRoute("Pianifica", "Pianifica/Tasks");
                 //endpoints.MapControllerRoute("pippo", "Pianifica", "Pianifica/{controller}/{action=Index}/{id?}");
                 //endpoints.MapControllerRoute("Pianifica", "Pianifica", "Pianifica/{controller=Test}/{action=Index}");
                 //endpoints.MapControllerRoute("pluto", "{controller=Login}/{action=Login}/{id?}");
 
-                //endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                // ES2: DECOMMENTARE LA SEGUENTE ISTRUZIONE
+
+                endpoints.MapControllerRoute("default", "{controller=Login}/{action=Login}/{id?}");
             });
         }
     }
