@@ -63,9 +63,14 @@ namespace Laboratorio2.Web
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                // ES1: DECOMMENTARE LE SEGUENTI ISTRUZIONI 1 PER VOLTA PER VERIFICARE
 
-                endpoints.MapAreaControllerRoute("pippo", "Pianifica", "Pianifica/{controller}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("Pianifica", "Pianifica/Tasks");
+                //endpoints.MapControllerRoute("pippo", "Pianifica", "Pianifica/{controller}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute("Pianifica", "Pianifica", "Pianifica/{controller=Test}/{action=Index}");
+                //endpoints.MapControllerRoute("pluto", "{controller=Login}/{action=Login}/{id?}");
+
+                //endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

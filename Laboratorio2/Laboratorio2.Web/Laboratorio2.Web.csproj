@@ -28,4 +28,11 @@
       </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="Areas\Pianifica\Tasks\Task.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
