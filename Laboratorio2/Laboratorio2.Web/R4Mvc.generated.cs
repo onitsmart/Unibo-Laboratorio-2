@@ -18,7 +18,10 @@ using R4Mvc;
 [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    static readonly R4Mvc.PianificaAreaClass s_PianificaArea = new R4Mvc.PianificaAreaClass();
+    public static R4Mvc.PianificaAreaClass PianificaArea => s_PianificaArea;
     public static readonly Laboratorio2.Web.Features.Home.HomeController Home = new Laboratorio2.Web.Features.Home.R4MVC_HomeController();
+    public static readonly Laboratorio2.Web.Features.Tasks.PianificaController Pianifica = new Laboratorio2.Web.Features.Tasks.R4MVC_PianificaController();
     public static readonly R4Mvc.SharedController Shared = new R4Mvc.SharedController();
 }
 
@@ -48,18 +51,21 @@ namespace R4Mvc
             public _ViewNamesClass ViewNames => s_ViewNames;
             public class _ViewNamesClass
             {
-                public readonly string Error = "Error";
                 public readonly string _Layout = "_Layout";
-                public readonly string _ValidationScriptsPartial = "_ValidationScriptsPartial";
             }
 
-            public readonly string Error = "~/Views/Shared/Error.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
-            public readonly string _ValidationScriptsPartial = "~/Views/Shared/_ValidationScriptsPartial.cshtml";
         }
 
         static readonly ViewsClass s_Views = new ViewsClass();
         public ViewsClass Views => s_Views;
+    }
+
+    [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+    public partial class PianificaAreaClass
+    {
+        public readonly string Name = "Pianifica";
+        public readonly Laboratorio2.Web.Areas.Pianifica.Tasks.TasksController Tasks = new Laboratorio2.Web.Areas.Pianifica.Tasks.R4MVC_TasksController();
     }
 }
 

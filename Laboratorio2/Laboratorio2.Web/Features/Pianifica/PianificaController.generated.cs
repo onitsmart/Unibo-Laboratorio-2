@@ -15,12 +15,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Routing;
 using R4Mvc;
 
-namespace Laboratorio2.Web.Features.Home
+namespace Laboratorio2.Web.Features.Tasks
 {
-    public partial class HomeController
+    public partial class PianificaController
     {
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
-        protected HomeController(Dummy d)
+        public PianificaController()
+        {
+        }
+
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        protected PianificaController(Dummy d)
         {
         }
 
@@ -76,14 +81,21 @@ namespace Laboratorio2.Web.Features.Home
             return RedirectToPagePermanent(taskResult.Result);
         }
 
+        [NonAction]
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
-        public HomeController Actions => MVC.Home;
+        public virtual IActionResult Tasks()
+        {
+            return new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Tasks);
+        }
+
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public PianificaController Actions => MVC.Pianifica;
         [GeneratedCode("R4Mvc", "1.0")]
         public readonly string Area = "";
         [GeneratedCode("R4Mvc", "1.0")]
-        public readonly string Name = "Home";
+        public readonly string Name = "Pianifica";
         [GeneratedCode("R4Mvc", "1.0")]
-        public const string NameConst = "Home";
+        public const string NameConst = "Pianifica";
         [GeneratedCode("R4Mvc", "1.0")]
         static readonly ActionNamesClass s_ActionNames = new ActionNamesClass();
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
@@ -91,15 +103,23 @@ namespace Laboratorio2.Web.Features.Home
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
-            public readonly string Privacy = "Privacy";
+            public readonly string Tasks = "Tasks";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
-            public const string Privacy = "Privacy";
+            public const string Tasks = "Tasks";
+        }
+
+        [GeneratedCode("R4Mvc", "1.0")]
+        static readonly ActionParamsClass_Tasks s_TasksParams = new ActionParamsClass_Tasks();
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Tasks TasksParams => s_TasksParams;
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Tasks
+        {
+            public readonly string id = "id";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
@@ -119,30 +139,21 @@ namespace Laboratorio2.Web.Features.Home
     }
 
     [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
-    public partial class R4MVC_HomeController : Laboratorio2.Web.Features.Home.HomeController
+    public partial class R4MVC_PianificaController : Laboratorio2.Web.Features.Tasks.PianificaController
     {
-        public R4MVC_HomeController(): base(Dummy.Instance)
+        public R4MVC_PianificaController(): base(Dummy.Instance)
         {
         }
 
         [NonAction]
-        partial void IndexOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo);
+        partial void TasksOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo, string id);
         [NonAction]
-        public override Microsoft.AspNetCore.Mvc.IActionResult Index()
+        public override System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> Tasks(string id)
         {
-            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void PrivacyOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo);
-        [NonAction]
-        public override Microsoft.AspNetCore.Mvc.IActionResult Privacy()
-        {
-            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Privacy);
-            PrivacyOverride(callInfo);
-            return callInfo;
+            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Tasks);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            TasksOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult<Microsoft.AspNetCore.Mvc.IActionResult>(callInfo);
         }
     }
 }
