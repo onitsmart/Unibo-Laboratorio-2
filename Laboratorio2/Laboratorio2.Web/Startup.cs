@@ -24,10 +24,11 @@ namespace Laboratorio2.Web
             // ES2.1: Injecting appSettings
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
+            // ES2.2: DECOMMENTARE LA SEGUENTE ISTRUZIONE PER CONFIGURARE LA SESSION
             //services.AddSession();
 
             var builder = services.AddMvc()
-                .AddSessionStateTempDataProvider();
+                .AddSessionStateTempDataProvider(); // ES2.2: CONFIGURA IL TEMPDATA
 
 #if DEBUG
             builder.AddRazorRuntimeCompilation();
@@ -64,6 +65,7 @@ namespace Laboratorio2.Web
 
             app.UseRouting();
 
+            // ES2.2: DECOMMENTARE LA SEGUENTE ISTRUZIONE PER CONFIGURARE LA SESSION
             //app.UseSession();
 
             app.UseEndpoints(endpoints =>
@@ -76,8 +78,7 @@ namespace Laboratorio2.Web
                 //endpoints.MapControllerRoute("pluto", "{controller=Login}/{action=Login}/{id?}");
 
                 // ES2: DECOMMENTARE LA SEGUENTE ISTRUZIONE
-
-                endpoints.MapControllerRoute("default", "{controller=Login}/{action=Login}/{id?}");
+                //endpoints.MapControllerRoute("default", "{controller=Login}/{action=Login}/{id?}");
             });
         }
     }
