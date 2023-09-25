@@ -16,9 +16,9 @@ namespace Laboratorio2.Web.Features.Home
             _appSettings = appSettings.Value;
         }
 
-        public virtual IActionResult Index()
+        public virtual IActionResult Index(string username)
         {
-            return View();
+            return View(null, username);
         }
 
         public virtual IActionResult Privacy()
