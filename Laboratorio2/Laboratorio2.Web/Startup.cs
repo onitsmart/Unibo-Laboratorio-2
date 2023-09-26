@@ -73,8 +73,8 @@ namespace Laboratorio2.Web
                 // ES1: DECOMMENTARE LE SEGUENTI ISTRUZIONI 1 PER VOLTA PER VERIFICARE
 
                 //endpoints.MapControllerRoute("Pianifica", "Pianifica/Tasks");
-                //endpoints.MapControllerRoute("pippo", "Pianifica", "Pianifica/{controller}/{action=Index}/{id?}");
-                //endpoints.MapControllerRoute("Pianifica", "Pianifica", "Pianifica/{controller=Test}/{action=Index}");
+                //endpoints.MapAreaControllerRoute("pippo", "Pianifica", "Pianifica/{controller}/{action=Index}/{id?}");
+                //endpoints.MapAreaControllerRoute("Pianifica", "Pianifica", "Pianifica/{controller=Test}/{action=Index}");
                 //endpoints.MapControllerRoute("pluto", "{controller=Login}/{action=Login}/{id?}");
 
                 // ES2: DECOMMENTARE LA SEGUENTE ISTRUZIONE
