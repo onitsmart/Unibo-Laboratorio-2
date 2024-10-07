@@ -27,8 +27,8 @@ namespace Laboratorio2.Web
             // ES2.2: DECOMMENTARE LA SEGUENTE ISTRUZIONE PER CONFIGURARE LA SESSION
             //services.AddSession();
 
-            var builder = services.AddMvc()
-                .AddSessionStateTempDataProvider(); // ES2.2: CONFIGURA IL TEMPDATA
+            var builder = services.AddMvc();
+                //.AddSessionStateTempDataProvider(); // ES2.2: CONFIGURA IL TEMPDATA
 
 #if DEBUG
             builder.AddRazorRuntimeCompilation();
@@ -78,7 +78,7 @@ namespace Laboratorio2.Web
                 //endpoints.MapControllerRoute("pluto", "{controller=Login}/{action=Login}/{id?}");
 
                 // ES2: DECOMMENTARE LA SEGUENTE ISTRUZIONE
-                //endpoints.MapControllerRoute("default", "{controller=Login}/{action=Login}/{id?}");
+                //endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
