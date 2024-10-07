@@ -1,21 +1,14 @@
-﻿@model Laboratorio2.Web.Features.Login.LoginViewModel
-@{
-    
-}
+﻿@model string
 <form method="post">
     <div>
-        <label asp-for="Username"></label>
-        <input asp-for="Username" type="text" />
+        <label>Username</label>
+        <input name="Username" type="text" />
     </div>
 
     <div>
-        <label asp-for="Password"></label>
-        <input asp-for="Password" type="password" />
+        <label>Password</label>
+        <input name="Password" type="password" />
     </div>
 
     <button>Login</button>
-
-    @if (string.IsNullOrWhiteSpace((string)TempData["Errore"]) == false) {
-        <div>@TempData["Errore"]</div>
-    }
 </form>
