@@ -77,8 +77,12 @@ namespace Laboratorio2.Web
                 //endpoints.MapAreaControllerRoute("Pianifica", "Pianifica", "Pianifica/{controller=Test}/{action=Index}");
                 //endpoints.MapControllerRoute("pluto", "{controller=Login}/{action=Login}/{id?}");
 
+                // ES4: DEFINIRE LE ROTTE PER I VARI CONTROLLERS
+
+                // ES5: DEFINIRE UNA ROTTA PER LE NEWS
+
                 // ES2: DECOMMENTARE LA SEGUENTE ISTRUZIONE
-                //endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
