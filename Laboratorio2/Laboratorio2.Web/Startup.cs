@@ -86,8 +86,14 @@ namespace Laboratorio2.Web
                 // ES1.1-ESEMPI: /id si aspetta l'id nell'url (opzionale). Quindi se non lo trova matcha la query string ma se lo trova ignora la query string. L'id nella route vince sull id nella query string.
 
                 // ES4: DEFINIRE LE ROTTE PER I VARI CONTROLLERS
+                // Route molto specifica per poter gestire il plateNumber nell'URL. Importante metterla prima di quella dopo altrimenti non arriverebbe mai a questa route
+                // Prima quelle più selettive e poi quelle più generali
+                endpoints.MapAreaControllerRoute("ConfiguraVeicoliCheckPlate", "Configura", "Configura/Veicoli/CheckPlate/{plateNumber?}", new { controller = "Veicoli", action = "CheckPlate" });
+                endpoints.MapAreaControllerRoute("Configura", "Configura", "Configura/{controller=Utenti}/{action=Index}/{id?}");
+                endpoints.MapAreaControllerRoute("Progetta", "Progetta", "Progetta/{controller=Grafici}/{action=Index}/{id?}");
 
                 // ES5: DEFINIRE UNA ROTTA PER LE NEWS
+                endpoints.MapControllerRoute("News", "News/{anno}/{mese}/{giorno}/{slug}", new { controller = "News", action = "Detail" });
 
                 // ES2: DECOMMENTARE LA SEGUENTE ISTRUZIONE
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
