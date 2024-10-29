@@ -28,7 +28,7 @@ namespace Laboratorio2.Web.Areas.Configura.Veicoli
         {
             var test = "pluto";
 
-            return View(plateNumber);
+            return View("CheckPlate", plateNumber);
         }
     }
 }
