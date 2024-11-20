@@ -1,0 +1,30 @@
+﻿@model Laboratorio2.Web.Areas.Rendiconta.Clienti.EditViewModel
+@{
+    ViewData["Title"] = "Cliente - " + Model.RagioneSociale;
+}
+<div>
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <form autocomplete="off" method="post" class="onit-form-sm" action="@Url.Action(MVC.Rendiconta.Clienti.Edit())" id="edit-form">
+                    <input type="hidden" asp-for="Id">
+
+                    <fieldset class="pb-3">
+                        <legend class="sticky-top">Infomazioni generali</legend>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 col-lg-8 col-xl-6">
+                                <label asp-for="RagioneSociale"></label>
+                                <input class="form-control form-control-sm" asp-for="RagioneSociale">
+                            </div>
+                            <div class="form-group col-md-6 col-lg-4 col-xl-3">
+                                <label asp-for="CapitaleSociale"></label>
+                                <input class="form-control form-control-sm" asp-for="CapitaleSociale">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

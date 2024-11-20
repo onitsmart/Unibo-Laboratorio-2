@@ -85,6 +85,9 @@ namespace Laboratorio2.Web
                 // ES1.1-ESEMPI: Provare l'URL https://localhost:44373/Pianifica/Tasks/Task/a5d0f931-e48b-476a-9941-1286ca432f3d?id=a5d0f931-e48b-476a-9941-1286ca432f3e e vedere che succede alle 2 route funzionanti.
                 // ES1.1-ESEMPI: /id si aspetta l'id nell'url (opzionale). Quindi se non lo trova matcha la query string ma se lo trova ignora la query string. L'id nella route vince sull id nella query string.
 
+                // ES3: ROTTA PER LA NUOVA AREA RENDICONTA
+                endpoints.MapAreaControllerRoute("Rendiconta", "Rendiconta", "Rendiconta/{controller=Clienti}/{action=Index}/{id?}");
+
                 // ES4: DEFINIRE LE ROTTE PER I VARI CONTROLLERS
                 // Route molto specifica per poter gestire il plateNumber nell'URL. Importante metterla prima di quella dopo altrimenti non arriverebbe mai a questa route
                 // Prima quelle più selettive e poi quelle più generali

@@ -1,0 +1,29 @@
+﻿@model Laboratorio2.Web.Areas.Rendiconta.Clienti.IndexViewModel
+@{
+    ViewData["Title"] = "Elenco clienti";
+}
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <table class="table table-hover table-sm table-striped">
+                    <thead>
+                        <tr>
+                            <th>RagioneSociale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var cliente in Model.Clienti)
+                        {
+                            <tr>
+                                <td scope="row">
+                                    <a href="@Url.Action(MVC.Rendiconta.Clienti.Edit(cliente.Id))" title="Modifica elemento"> @cliente.RagioneSociale</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
